@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Slot Machine — Bet & Spin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <h1 class="logo">🎰 SLOT&nbsp;MACHINE</h1>
+    <p class="tagline">Place your bet. Pull the lever. Match the reels.</p>
+  </header>
+
+  <main class="game-wrapper">
+
+    <!-- ===================== LEFT COLUMN: STATS + CONTROLS ===================== -->
+    <section class="control-panel" aria-label="Betting controls">
+
+      <!-- Balance display -->
+      <div class="stat-card balance-card">
+        <span class="stat-label">Balance</span>
+        <span class="stat-value" id="balanceDisplay">$100</span>
+      </div>
+
+      <!-- Current bet display -->
+      <div class="stat-card bet-display-card">
+        <span class="stat-label">Current Bet</span>
+        <span class="stat-value" id="currentBetDisplay">$0</span>
+      </div>
+
+      <!-- Bet input form -->
+      <form id="betForm" class="bet-form" novalidate>
+        <label for="betInput">Your Bet (whole dollars, $5 – $50)</label>
+        <div class="bet-input-row">
+          <span class="dollar-sign">$</span>
+          <input
+            type="number"
+            id="betInput"
+            name="betInput"
+            min="5"
+            max="50"
+            step="1"
+            inputmode="numeric"
+            placeholder="e.g. 10"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Quick-bet shortcuts so min/max betting is obvious and one click away -->
+        <div class="quick-bet-row">
+          <button type="button" id="betMinBtn" class="btn btn-quick">Bet Min ($5)</button>
+          <button type="button" id="betMaxBtn" class="btn btn-quick">Bet Max ($50)</button>
+        </div>
+
+        <!-- Validation feedback message, shown/hidden by JS -->
+        <p id="betError" class="bet-error" role="alert"></p>
+
+        <div class="button-row">
+          <button type="submit" id="spinBtn" class="btn btn-primary">
+            <span class="btn-icon">🎰</span> SPIN REELS
+          </button>
+          <button type="button" id="resetBtn" class="btn btn-secondary">
+            Reset Game
+          </button>
+        </div>
+      </form>
+
+      <!-- Result banner: clearly shows win/loss after each spin -->
+      <div id="resultBanner" class="result-banner" aria-live="polite">
+        <p class="result-text">Place a bet and spin to play!</p>
+      </div>
+    </section>
+
+    <!-- ===================== RIGHT COLUMN: THE SLOT MACHINE ===================== -->
+    <section class="slot-machine-section" aria-label="Slot machine reels">
+      <div class="machine-cabinet">
+
+        <div class="marquee" aria-hidden="true"></div>
+
+        <div class="reels-window" id="reelsWindow">
+          <div class="reel" id="reelBox0" data-reel="0">
+            <div class="reel-symbol" id="reel0">❔</div>
+          </div>
+          <div class="reel" id="reelBox1" data-reel="1">
+            <div class="reel-symbol" id="reel1">❔</div>
+          </div>
+          <div class="reel" id="reelBox2" data-reel="2">
+            <div class="reel-symbol" id="reel2">❔</div>
+          </div>
+
+          <!-- Fixed horizontal payline across the middle of the reels -->
+          <div class="payline" id="payline" aria-hidden="true"></div>
+        </div>
+
+        <!-- Decorative + clickable lever, an alternate way to spin -->
+        <button type="button" id="leverBtn" class="lever" aria-label="Pull lever to spin">
+          <span class="lever-knob"></span>
+        </button>
+      </div>
+
+      <!-- Paytable: built dynamically from the SYMBOLS array in script.js -->
+      <div class="paytable" aria-label="Payout table">
+        <h3>Payouts</h3>
+        <div class="paytable-grid" id="paytableGrid">
+          <!-- .paytable-row elements are injected by JS -->
+        </div>
+        <p class="paytable-note">Match all 3 reels for the jackpot multiplier shown. Match exactly 2 reels to get your bet back.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== HOW TO PLAY ===================== -->
+  <section class="instructions" aria-label="How to play">
+    <h2>How to Play</h2>
+    <ol>
+      <li>Enter a whole-dollar bet between <strong>$5</strong> and <strong>$50</strong> (or use the Min/Max buttons).</li>
+      <li>Click <strong>SPIN REELS</strong> (or pull the lever) — the bet is deducted and all 3 reels spin.</li>
+      <li>Land <strong>3 matching symbols</strong> for a jackpot payout, <strong>2 matching symbols</strong> to get your bet back, or no match to lose your bet.</li>
+      <li>Your balance updates automatically. Bet again and keep playing!</li>
+    </ol>
+  </section>
+
+  <footer class="site-footer">
+    <p>🎓 For educational purposes only — this game does not involve real money.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
