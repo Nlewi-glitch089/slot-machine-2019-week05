@@ -1,24 +1,25 @@
-# 🎰 Week05 Bootcamp2019 Project: Slot Machine
+# Slot Machine
 
-### Goal: Build a Simple Slot Machine
+A browser-based slot machine exercise with three reels, at least five symbols per reel, and a simple betting balance.
 
-Build a simple slot machine with minimum 5 items per reel and 3 reels - user should be able to bet min or max and have their total update
+## Technology
 
-### How to submit your code for review:
+HTML, CSS, JavaScript
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+## Run locally
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+Clone the repository, run `git switch answer`, and open `index.html` in a browser. No dependency installation is needed.
+
+## Solution code
+
+The completed implementation is on the `answer` branch. Switch to it with `git switch answer` after cloning.
+
+[View the solution branch on GitHub](https://github.com/Nlewi-glitch089/slot-machine-2019-week05/tree/answer).
+
+## Project context
+
+This repository began as a Resilient Coders / bootcamp coding exercise. The original assignment prompt is preserved in the repository history; this README describes the implementation branch so visitors can understand what the code does and how to try it.
+
+## Hosting
+
+These are learning exercises, not currently documented as live hosted applications. They can be run locally using the instructions above. A static project could be published with GitHub Pages if a public demo is useful.
