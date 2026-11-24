@@ -23,3 +23,9 @@ This repository began as a Resilient Coders / bootcamp coding exercise. The orig
 ## Hosting
 
 These are learning exercises, not currently documented as live hosted applications. They can be run locally using the instructions above. A static project could be published with GitHub Pages if a public demo is useful.
+
+## Live Demo
+
+[Play the Slot Machine](https://slot-machine-2019-week05-c9gu.onrender.com/)
+
+The application is hosted on Render.
